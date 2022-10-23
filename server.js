@@ -5,6 +5,7 @@ import cors from 'cors'
 import formData from 'express-form-data'
 
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as recipesRouter } from './routes/recipes.js'
 import { router as authRouter } from './routes/auth.js'
 
 import './config/database.js'
@@ -17,6 +18,7 @@ app.use(express.json())
 app.use(formData.parse())
 
 app.use('/api/profiles', profilesRouter)
+app.use('/api/recipes', recipesRouter)
 app.use('/api/auth', authRouter)
 
 app.use(function (req, res, next) {
